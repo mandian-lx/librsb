@@ -1,0 +1,4 @@
+# false positive: /usr/bin/librsb-config is  bash script
+addFilter("E: devel-file-in-non-devel-package")
+addFilter("E: rpath-in-buildconfig")
+
