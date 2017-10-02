@@ -14,9 +14,12 @@ License:	LGPLv3
 Group:		System/Libraries
 URL:		http://librsb.sourceforge.net
 Source0:	https://downloads.sourceforge.net/%{name}/%{name}-%{ver}.tar.gz
-Source1:	%{name}.rpmlintrc
+Source100:	%{name}.rpmlintrc
 
+BuildRequires:	pkgconfig(gsl)
 BuildRequires:	pkgconfig(hwloc)
+BuildRequires:	pkgconfig(libpapi)
+BuildRequires:	pkgconfig(libtirpc)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	doxygen
 BuildRequires:	graphviz
@@ -24,6 +27,7 @@ BuildRequires:	graphviz
 BuildRequires:	octave-devel
 %endif
 BuildRequires:	gcc-gfortran
+BuildRequires:	openmp-devel
 BuildRequires:	help2man
 
 %description
