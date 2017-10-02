@@ -1,0 +1,41 @@
+--- a/examples/io-spblas.c
++++ b/examples/io-spblas.c
+@@ -40,7 +40,7 @@
+ #else /* RSB_NUMERICAL_TYPE_DOUBLE */
+ 	blas_sparse_matrix A = blas_invalid_handle;
+ 	rsb_type_t typecode = RSB_NUMERICAL_TYPE_DOUBLE;
+-	rsb_char_t * filename = argc > 1 ? argv[1] : "../pd.mtx";
++	rsb_char_t * filename = argc > 1 ? argv[1] : "pd.mtx";
+ 
+ 	printf("Hello, RSB!\n");
+ 	if((rsb_perror(NULL,
+--- a/examples/transpose.c
++++ b/examples/transpose.c
+@@ -86,7 +86,7 @@
+ 	rsb_mtx_free(mtxAp);
+ 
+ 	/* doing the same after load from file */
+-	mtxAp = rsb_file_mtx_load("../pd.mtx",
++	mtxAp = rsb_file_mtx_load("pd.mtx",
+ 		RSB_FLAG_NOFLAGS,typecode,NULL);
+ 	if(!mtxAp)
+ 	{
+@@ -102,7 +102,7 @@
+ 
+ 	/* one can see dimensions in advance, also */
+ 	if(RSB_ERR_NO_ERROR!=(errval =
+-		rsb_file_mtx_get_dims("../pd.mtx",&nrA,&ncA,&nnzA,NULL)))
++		rsb_file_mtx_get_dims("pd.mtx",&nrA,&ncA,&nnzA,NULL)))
+ 	{
+ 		if(errval != RSB_ERR_UNSUPPORTED_FEATURE)
+ 			goto err;
+@@ -136,7 +136,7 @@
+ 		unsigned char pixmap[3*2*2];
+ 
+ 		if(RSB_ERR_NO_ERROR!=(errval =
+-		rsb_file_mtx_rndr(pixmap,"../pd.mtx",2,2,2,RSB_MARF_RGB)))
++		rsb_file_mtx_rndr(pixmap,"pd.mtx",2,2,2,RSB_MARF_RGB)))
+ 			goto err;
+ 	}
+ 
+
