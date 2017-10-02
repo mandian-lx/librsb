@@ -1,0 +1,14 @@
+--- a/configure.ac.orig
++++ b/configure.ac
+@@ -4,8 +4,8 @@
+ dnl	******* the following line shall be commented in branches/... **********
+ dnl define([librsbsvnversion],[esyscmd([sh -c "basename `svn info | grep ^URL | sed 's/URL: '//g` | tr -d '\n'"])])dnl
+ dnl	************************************************************************
+-define([librsbtodaydate],[esyscmd([sh -c "date +'%B %d, %Y' | tr -d '\n'"])])dnl
+-define([librsbsvnrevision],[esyscmd([sh -c "svnversion -n"])])dnl
++define([librsbtodaydate],[today])dnl
++define([librsbsvnrevision],[unversioned])dnl
+ dnl	************************************************************************
+ dnl	**** the following lines shall be updated at each release **************
+ dnl	************************************************************************
+

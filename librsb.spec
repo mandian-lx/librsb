@@ -15,7 +15,8 @@ Group:		System/Libraries
 URL:		http://librsb.sourceforge.net
 Source0:	https://downloads.sourceforge.net/%{name}/%{name}-%{ver}.tar.gz
 Source100:	%{name}.rpmlintrc
-Patch0:		%{name}-1.2.0-rc7-fix-path-in-examples.patch
+Patch0:		%{name}-1.2.0-rc7-reproducible-build.patch
+Patch1:		%{name}-1.2.0-rc7-fix-path-in-examples.patch
 
 BuildRequires:	pkgconfig(gsl)
 BuildRequires:	pkgconfig(hwloc)
